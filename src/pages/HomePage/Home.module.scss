@@ -1,0 +1,29 @@
+.home {
+  width: 100%;
+}
+
+.sticker {
+  max-width: 1346px;
+  width: 70vw;
+  height: 506px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.title {
+  margin-top: 151px;
+  margin-bottom: 66px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.categories_list {
+  width: 100%;
+  margin-top: 78px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-between;
+  grid-gap: 40px;
+}

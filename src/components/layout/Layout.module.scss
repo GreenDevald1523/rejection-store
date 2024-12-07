@@ -1,0 +1,25 @@
+.layout {
+  margin-top: 86px;
+  min-height: 100%;
+  height: calc(100vh - 86px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 56px 80px;
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 100%;
+}
+
+.bg-image {
+  max-width: 1496px;
+  width: 70vw;
+  position: fixed;
+  left: 10vw;
+  top: 5%;
+  opacity: 0.2;
+  z-index: -1;
+}

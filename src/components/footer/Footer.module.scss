@@ -1,0 +1,25 @@
+.footer {
+  width: 100vw;
+  height: 271px;
+  background: #000;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 271px;
+  height: 271px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 50px;
+}
+
+.link {
+  font-size: 16px;
+}

@@ -1,0 +1,14 @@
+.about {
+  width: 100%;
+
+  &_text {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & p {
+      font-size: 20px;
+      text-indent: 40px;
+    }
+  }
+}

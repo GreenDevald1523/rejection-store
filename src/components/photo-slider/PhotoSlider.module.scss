@@ -1,0 +1,10 @@
+.photo_slider {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid white;
+  background: black;
+
+  & img {
+    height: 800px;
+  }
+}
