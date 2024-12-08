@@ -6,3 +6,4 @@ export { CategoryItem } from "./category-item/CategoryItem";
 export { ProductItem } from "./product-item/ProductItem";
 export { Loader } from "./loader/Loader";
 export { ErrorPlaceholder } from "./error-placeholder/ErrorPlaceholder";
+export { Benefits } from "./benefts/Benefits";

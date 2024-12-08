@@ -15,7 +15,7 @@ export const ProductItem: FC<IProduct> = (props) => {
         />
         <div className={classes.product_item__info}>
           <h3 className={classes.product_item__label}>{props.name}</h3>
-          <p>Цена: {props.price}₽</p>
+          <p>Цена: ₽{props.price}</p>
         </div>
       </div>
     </a>

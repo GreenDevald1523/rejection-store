@@ -17,14 +17,15 @@ export const PhotoSlider = () => {
   return (
     <motion.div
       viewport={{ once: true, amount: 0.8 }}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{
         opacity: 1,
+        y: 0,
         transition: { duration: 1 },
       }}
     >
       <div className={classes.photo_slider}>
-        <Carousel autoPlay interval={2000} loop renderDots={() => null}>
+        <Carousel autoPlay interval={3000} loop renderDots={() => null}>
           {images.map((image, i) => (
             <img draggable="false" src={image} key={i} width="100%" alt="" />
           ))}

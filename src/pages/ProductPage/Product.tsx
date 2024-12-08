@@ -52,7 +52,7 @@ export default function Product() {
 
           <div className={classes.product_info__order}>
             <span>
-              Цена: <strong>{productData?.price} ₽</strong>
+              Цена: <strong>₽{productData?.price}</strong>
             </span>
             <a href={CONTACT_LINK} target="_blank">
               <button>Заказать</button>
