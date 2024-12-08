@@ -1,40 +1,41 @@
-import { motion } from "framer-motion";
-import classes from "./Benefits.module.scss";
-import settingsIcon from "@/assets/settings.jpg";
-import deliveryIcon from "@/assets/delivery.jpg";
-import phoneIcon from "@/assets/phone.jpg";
+import { motion } from "framer-motion"; // Импорт библиотеки для анимации
+import classes from "./Benefits.module.scss"; // Импорт CSS-модуля
+import settingsIcon from "@/assets/settings.jpg"; // Импорт изображения для первого преимущества
+import deliveryIcon from "@/assets/delivery.jpg"; // Импорт изображения для второго преимущества
+import phoneIcon from "@/assets/phone.jpg"; // Импорт изображения для третьего преимущества
 
 export const Benefits = () => {
+  // Функциональный компонент для отображения преимуществ
   return (
     <div className={classes.benefits}>
-      <motion.div
-        viewport={{ once: true, amount: 0.8 }}
-        initial={{ opacity: 0, y: 50 }}
+      {/* Контейнер для всех преимуществ */}
+      {/* Компонент для первого преимущества */}
+      <motion.div // Использование motion.div для анимации
+        viewport={{ once: true, amount: 0.8 }} // Параметры viewport для запуска анимации при появлении в окне просмотра
+        initial={{ opacity: 0, y: 50 }} // Начальное состояние анимации
         whileInView={{
+          // Состояние анимации при появлении в окне просмотра
           opacity: 1,
           y: 0,
-          transition: { duration: 1 },
+          transition: { duration: 1 }, // Длительность анимации
         }}
-        className={classes.benefits_item}
+        className={classes.benefits_item} // CSS-класс для стилизации элемента
       >
-        <img src={settingsIcon} alt="img1" />
+        <img src={settingsIcon} alt="img1" /> {/* Изображение */}
         <div className={classes.benefits_item__desc}>
-          <h2>Отличное качество каждой детали</h2>
+          {/* Контейнер для текста */}
+          <h2>Отличное качество каждой детали</h2> {/* Заголовок */}
           <p>
             Делаем огромный акцент на качество и надежность товаров. Наши
-            клиента достойны лучшего!
+            клиента достойны лучшего! {/* Текст описания */}
           </p>
         </div>
       </motion.div>
-
+      {/* Компонент для второго преимущества (аналогично первому) */}
       <motion.div
         viewport={{ once: true, amount: 0.8 }}
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 1 },
-        }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
         className={classes.benefits_item}
       >
         <div className={classes.benefits_item__desc}>
@@ -46,15 +47,11 @@ export const Benefits = () => {
         </div>
         <img src={deliveryIcon} alt="img2" />
       </motion.div>
-
+      {/* Компонент для третьего преимущества (аналогично первому) */}
       <motion.div
         viewport={{ once: true, amount: 0.8 }}
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 1 },
-        }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
         className={classes.benefits_item}
       >
         <img src={phoneIcon} alt="img3" />

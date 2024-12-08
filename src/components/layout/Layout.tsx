@@ -1,19 +1,24 @@
-import { FC } from "react";
-import classes from "./Layout.module.scss";
-import { Footer, Header } from "@/components";
-import bgImage from "@/assets/logo.png";
+import { FC } from "react"; // Импорт типа FC для функционального компонента
+import classes from "./Layout.module.scss"; // Импорт CSS-модуля
+import { Footer, Header } from "@/components"; // Импорт компонентов Header и Footer
+import bgImage from "@/assets/logo.png"; // Импорт фонового изображения
 
 type Props = {
-  children?: React.ReactNode;
+  // Интерфейс для props компонента
+  children?: React.ReactNode; // Дочерние элементы компонента
 };
 
 export const Layout: FC<Props> = ({ children }) => {
+  // Функциональный компонент Layout
   return (
     <div className={classes.layout}>
-      <Header />
+      {/* Основной контейнер Layout */}
+      <Header /> {/* Компонент Header */}
       <div className={classes.container}>{children}</div>
+      {/* Контейнер для основного контента */}
       <img className={classes["bg-image"]} src={bgImage} alt="bgImg" />
-      <Footer />
+      {/* Фоновое изображение */}
+      <Footer /> {/* Компонент Footer */}
     </div>
   );
 };

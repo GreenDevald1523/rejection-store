@@ -1,8 +1,9 @@
-import Carousel from "framer-motion-carousel";
-import classes from "./PhotoSlider.module.scss";
-import { motion } from "framer-motion";
+import Carousel from "framer-motion-carousel"; // Импорт компонента карусели
+import classes from "./PhotoSlider.module.scss"; // Импорт CSS-классов
+import { motion } from "framer-motion"; // Импорт библиотеки для анимации
 
 const images = [
+  // Массив URL изображений
   "https://sun9-25.userapi.com/impg/gELRilcaPnBjVP71_NKqI3gGOGWjjWarX-tTsQ/EgRD96y5QoA.jpg?size=720x720&quality=95&sign=5cde24b6058cd3cd9cd9c05a8f9bff88&type=album",
   "https://sun9-12.userapi.com/impg/mBFqjZ_JgQuuu_AzCW-rTr1H1R6mVulBrER7JQ/0wq8IKz001s.jpg?size=1280x1280&quality=95&sign=7a521000704f2afac69b426afb7f3fe3&type=album",
   "https://sun9-30.userapi.com/impg/RO_QacIBTB7eU1N8WNaIkV2kr-E8eWTLybGVVA/8uf25UU7564.jpg?size=1080x1080&quality=95&sign=4c071263fe2cfcc7193be4b9667471f1&type=album",
@@ -14,21 +15,30 @@ const images = [
 ];
 
 export const PhotoSlider = () => {
+  // Компонент для слайдера изображений
   return (
-    <motion.div
-      viewport={{ once: true, amount: 0.8 }}
-      initial={{ opacity: 0, y: 50 }}
+    <motion.div // Использование motion.div для анимации
+      viewport={{ once: true, amount: 0.8 }} // Параметры для анимации при появлении в окне просмотра
+      initial={{ opacity: 0, y: 50 }} // Начальное состояние анимации
       whileInView={{
+        // Состояние анимации при появлении в окне просмотра
         opacity: 1,
         y: 0,
-        transition: { duration: 1 },
+        transition: { duration: 1 }, // Длительность анимации
       }}
     >
       <div className={classes.photo_slider}>
+        {/* Контейнер для слайдера */}
         <Carousel autoPlay interval={3000} loop renderDots={() => null}>
-          {images.map((image, i) => (
-            <img draggable="false" src={image} key={i} width="100%" alt="" />
-          ))}
+          {/* Карусель с автопрокруткой */}
+          {images.map(
+            (
+              image,
+              i // Цикл для отображения изображений
+            ) => (
+              <img draggable="false" src={image} key={i} width="100%" alt="" /> // Изображение
+            )
+          )}
         </Carousel>
       </div>
     </motion.div>

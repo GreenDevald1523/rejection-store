@@ -1,12 +1,16 @@
-import { Breadcrumbs, Title } from "@/ui";
-import classes from "./About.module.scss";
+import { Breadcrumbs, Title } from "@/ui"; // Импорт компонентов Breadcrumbs и Title из папки ui
+import classes from "./About.module.scss"; // Импорт стилей из файла About.module.scss
 
 export default function About() {
+  // Функциональный компонент About
   return (
     <div className={classes.about}>
+      {/* Основной контейнер компонента */}
       <Title centered>О нас</Title>
-      <Breadcrumbs />
+      {/* Заголовок "О нас", выровненный по центру */}
+      <Breadcrumbs /> {/* Компонент хлебных крошек для навигации */}
       <div className={classes.about_text}>
+        {/* Контейнер для текста о компании */}
         <p>
           Rejection — это не просто магазин автомобильных аксессуаров. Это
           место, где воплощаются самые смелые и нестандартные идеи тюнинга. Мы

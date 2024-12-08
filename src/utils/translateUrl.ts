@@ -1,3 +1,5 @@
+// Перевод URL значений из eng в ru
+
 export const translateUrl = (text: string) => {
   switch (text) {
     case "about":

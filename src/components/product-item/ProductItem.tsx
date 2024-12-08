@@ -1,21 +1,26 @@
-import { FC } from "react";
-import classes from "./ProductItem.module.scss";
-import { IProduct } from "@/types/products";
-import { useLocation } from "react-router-dom";
+import { FC } from "react"; // Импорт типа для функционального компонента
+import classes from "./ProductItem.module.scss"; // Импорт CSS-классов
+import { IProduct } from "@/types/products"; // Импорт интерфейса для данных продукта
+import { useLocation } from "react-router-dom"; // Импорт хука для получения информации о местоположении
 
 export const ProductItem: FC<IProduct> = (props) => {
-  const { pathname } = useLocation();
+  // Функциональный компонент для отображения товара
+  const { pathname } = useLocation(); // Получение текущего пути
   return (
-    <a href={pathname + "/" + props.id}>
+    <a href={`${pathname}/${props.id}`}>
+      {/* Ссылка на страницу товара */}
       <div className={classes.product_item}>
-        <img
+        {/* Контейнер для товара */}
+        <img // Изображение товара
           className={classes.product_item__image}
-          src={props.images[0]}
+          src={props.images[0]} // Первое изображение из массива
           alt="product"
         />
         <div className={classes.product_item__info}>
+          {/* Контейнер для информации о товаре */}
           <h3 className={classes.product_item__label}>{props.name}</h3>
-          <p>Цена: ₽{props.price}</p>
+          {/* Название товара */}
+          <p>Цена: ₽{props.price}</p> {/* Цена товара */}
         </div>
       </div>
     </a>

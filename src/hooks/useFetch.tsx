@@ -1,37 +1,45 @@
-import { API_URL } from "@/constants";
-import { useState, useEffect } from "react";
+import { API_URL } from "@/constants"; // Импорт константы с базовым URL API
+import { useState, useEffect } from "react"; // Импорт хуков для работы с состоянием и эффектами
 
 interface UseFetchResult {
-  data: any | null;
-  isLoading: boolean;
-  error: any | null;
+  // Интерфейс для результата работы хука
+  data: any | null; // Данные, полученные с сервера или null
+  isLoading: boolean; // Флаг, указывающий на загрузку данных
+  error: any | null; // Ошибка, возникшая при получении данных или null
 }
 
 export const useFetch = (url: string): UseFetchResult => {
-  const [data, setData] = useState<any | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<any | null>(null);
+  // Кастомный хук для выполнения fetch-запроса
+  const [data, setData] = useState<any | null>(null); // Состояние для хранения данных
+  const [isLoading, setIsLoading] = useState<boolean>(true); // Состояние для индикатора загрузки
+  const [error, setError] = useState<any | null>(null); // Состояние для хранения ошибки
 
   useEffect(() => {
+    // Выполнение эффекта после каждого изменения url
     setTimeout(() => {
-      fetch(API_URL + url)
+      // Имитация задержки для демонстрации индикатора загрузки (в реальном приложении задержка не нужна)
+      fetch(API_URL + url) // Выполнение fetch-запроса
         .then((res) => {
+          // Обработка ответа
           if (!res.ok) {
-            throw Error("Error fetching users data");
+            // Проверка статуса ответа
+            throw Error("Error fetching data"); // Выбрасывание ошибки, если статус не 200-299
           }
-          return res.json();
+          return res.json(); // Преобразование ответа в JSON
         })
         .then((data) => {
-          setData(data);
-          setIsLoading(false);
-          setError(null);
+          // Обработка данных
+          setData(data); // Сохранение данных в состоянии
+          setIsLoading(false); // Установка флага загрузки в false
+          setError(null); // Очистка состояния ошибки
         })
         .catch((err) => {
-          setIsLoading(false);
-          setError(err.message);
+          // Обработка ошибок
+          setIsLoading(false); // Установка флага загрузки в false
+          setError(err.message); // Сохранение сообщения об ошибке в состоянии
         });
-    }, 1000);
-  }, [url]);
+    }, 1000); // Задержка в 1 секунду (для демонстрации, в продакшене уберите)
+  }, [url]); // Зависимость эффекта от url
 
-  return { data, isLoading, error };
+  return { data, isLoading, error }; // Возвращение результата
 };
